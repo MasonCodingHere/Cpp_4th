@@ -1,3 +1,5 @@
+//习题2-16.提示输入一个数，再把这个数字显示出来 
+
 #include <iostream>
 using namespace std;
 
