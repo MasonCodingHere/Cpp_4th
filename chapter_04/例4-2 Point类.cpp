@@ -1,50 +1,50 @@
-//PointÀàµÄÍêÕû³ÌĞò
+//Pointç±»çš„å®Œæ•´ç¨‹åº
 
 #include<iostream>
 using namespace std;
 
-class Point{                                      //PointÀàµÄ¶¨Òå 
-	public:                                       //Íâ²¿½Ó¿Ú 
-		Point(int xx=0,int yy=0){                 //¹¹Ôìº¯Êı 
+class Point{                                      //Pointç±»çš„å®šä¹‰ 
+	public:                                       //å¤–éƒ¨æ¥å£ 
+		Point(int xx=0,int yy=0){                 //æ„é€ å‡½æ•° 
 			x=xx;
 			y=yy;
 		}
-		Point(Point &p);                         //¸´ÖÆ¹¹Ôìº¯Êı 
+		Point(Point &p);                         //å¤åˆ¶æ„é€ å‡½æ•° 
 		int getX(){
 			return x;
 		}
 		int getY(){
 			return y;
 		}
-	private:                                     //Ë½ÓĞÊı¾İ 
+	private:                                     //ç§æœ‰æ•°æ® 
 		int x,y;
 }; 
 
-//³ÉÔ±º¯ÊıµÄÊµÏÖ
+//æˆå‘˜å‡½æ•°çš„å®ç°
 Point::Point(Point &p){
 	x=p.x;
 	y=p.y;
 	cout<<"Calling the copy constructor"<<endl;
 } 
 
-//ĞÎ²ÎÎªPointÀà¶ÔÏóµÄº¯Êı
+//å½¢å‚ä¸ºPointç±»å¯¹è±¡çš„å‡½æ•°
 void fun1(Point p){
 	cout<<p.getX()<<endl;
 } 
 
-//·µ»ØÖµÎªPointÀà¶ÔÏóµÄº¯Êı
+//è¿”å›å€¼ä¸ºPointç±»å¯¹è±¡çš„å‡½æ•°
 Point fun2(){
 	Point a(1,2);
 	return a;
 } 
 
-//Ö÷³ÌĞò
+//ä¸»ç¨‹åº
 int main(){
-	Point a(4,5);                               //µÚÒ»¸ö¶ÔÏóa 
-	Point b=a;                                  //Çé¿öÒ»£¬ÓÃa³õÊ¼»¯b¡£µÚÒ»´Îµ÷ÓÃ¸´ÖÆ¹¹Ôìº¯Êı 
+	Point a(4,5);                               //ç¬¬ä¸€ä¸ªå¯¹è±¡a 
+	Point b=a;                                  //æƒ…å†µä¸€ï¼Œç”¨aåˆå§‹åŒ–bã€‚ç¬¬ä¸€æ¬¡è°ƒç”¨å¤åˆ¶æ„é€ å‡½æ•° 
 	cout<<b.getX()<<endl;
-	fun1(b);                                    //Çé¿ö¶ş£¬¶ÔÏób×÷Îªfun1µÄÊµ²Î¡£µÚ¶ş´Îµ÷ÓÃ¸´ÖÆ¹¹Ôìº¯Êı 
-	b=fun2();                                   //Çé¿öÈı£¬º¯ÊıµÄ·µ»ØÖµÊÇÀà¶ÔÏó£¬º¯Êı·µ»ØÊ±£¬µ÷ÓÃ¸´ÖÆ¹¹Ôìº¯Êı 
+	fun1(b);                                    //æƒ…å†µäºŒï¼Œå¯¹è±¡bä½œä¸ºfun1çš„å®å‚ã€‚ç¬¬äºŒæ¬¡è°ƒç”¨å¤åˆ¶æ„é€ å‡½æ•° 
+	b=fun2();                                   //æƒ…å†µä¸‰ï¼Œå‡½æ•°çš„è¿”å›å€¼æ˜¯ç±»å¯¹è±¡ï¼Œå‡½æ•°è¿”å›æ—¶ï¼Œè°ƒç”¨å¤åˆ¶æ„é€ å‡½æ•° 
 	cout<<b.getX()<<endl;
 	return 0;
 } 

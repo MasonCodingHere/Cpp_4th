@@ -1,27 +1,27 @@
-//9_1.cpp º¯ÊıÄ£°åµÄÊ¾Àı
+//9_1.cpp å‡½æ•°æ¨¡æ¿çš„ç¤ºä¾‹
 
 #include<iostream>
 using namespace std;
 
-template <class T>                           //¶¨Òåº¯ÊıÄ£°å 
+template <class T>                           //å®šä¹‰å‡½æ•°æ¨¡æ¿ 
 void outputArray(const T *array,int count){
 	for(int i=0;i<count;i++)
 	    cout<<array[i]<<" ";
 	cout<<endl;
 } 
 
-int main(){                                   //Ö÷º¯Êı 
+int main(){                                   //ä¸»å‡½æ•° 
 	const int A_COUNT=8,B_COUNT=8,C_COUNT=20;
-	int a[A_COUNT]={1,2,3,4,5,6,7,8};        //¶¨ÒåintÊı×é 
-	double b[B_COUNT]={1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8}; //¶¨ÒådoubleÊı×é 
-	char c[C_COUNT]="Welcome to see you!";     //¶¨ÒåcharÊı×é 
+	int a[A_COUNT]={1,2,3,4,5,6,7,8};        //å®šä¹‰intæ•°ç»„ 
+	double b[B_COUNT]={1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8}; //å®šä¹‰doubleæ•°ç»„ 
+	char c[C_COUNT]="Welcome to see you!";     //å®šä¹‰charæ•°ç»„ 
 	
 	cout<<"a array contains:"<<endl;
-	outputArray(a,A_COUNT);                //µ÷ÓÃº¯ÊıÄ£°å 
+	outputArray(a,A_COUNT);                //è°ƒç”¨å‡½æ•°æ¨¡æ¿ 
 	cout<<"b array contains:"<<endl;
-	outputArray(b,B_COUNT);                //µ÷ÓÃº¯ÊıÄ£°å 
+	outputArray(b,B_COUNT);                //è°ƒç”¨å‡½æ•°æ¨¡æ¿ 
 	cout<<"c array contains:"<<endl;
-	outputArray(c,C_COUNT);                //µ÷ÓÃº¯ÊıÄ£°å 
+	outputArray(c,C_COUNT);                //è°ƒç”¨å‡½æ•°æ¨¡æ¿ 
 	
 	return 0; 
 }

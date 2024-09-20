@@ -1,5 +1,5 @@
-//��4-10.���һ���ṹ��洢ѧ���ĳɼ���Ϣ������ѧ�š��꼶�ͳɼ��������ݣ�
-//ѧ�ŷ�Χ��0��99999999���꼶��Ϊfreshman��sophomore��junior��senior���֣��ɼ���ΪA\B\C\D�ĸ��ȼ� 
+//例4-10.设计一个结构体存储学生的成绩信息，包含学号、年级和成绩三项内容，
+//学号范围是0～99999999，年级分为freshman，sophomore，junior，senior四种，成绩分为A\B\C\D四个等级 
 
 #include<iostream>
 using namespace std;

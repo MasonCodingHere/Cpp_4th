@@ -4,23 +4,23 @@ using namespace std;
 
 class ExamInfo{
 	public:
-		//3种构造函数，分别用等级、是否通过和百分制来初始化
+		//3绉嶆瀯閫犲嚱鏁帮紝鍒嗗埆鐢ㄧ瓑绾с�佹槸鍚﹂�氳繃鍜岀櫨鍒嗗埗鏉ュ垵濮嬪寲
 		ExamInfo(string name,char grade):name(name),mode(GRADE),grade(grade){}
 		ExamInfo(string name,bool pass):name(name),mode(PASS),pass(pass){}
 		ExamInfo(string name,int percent):name(name),mode(PERCENTAGE),percent(percent){}
 		void show();
 		
 	private:
-		string name;                         //课程名称 
+		string name;                         //璇剧▼鍚嶇О 
 		enum{
 			GRADE,
 			PASS,
 			PERCENTAGE
-		}mode;                               //采用何种计分方式 
+		}mode;                               //閲囩敤浣曠璁″垎鏂瑰紡 
 		union{
-			char grade;                      //等级制的成绩 
-			bool pass;                       //是否通过 
-			int percent;                     //百分制的成绩 
+			char grade;                      //绛夌骇鍒剁殑鎴愮哗 
+			bool pass;                       //鏄惁閫氳繃 
+			int percent;                     //鐧惧垎鍒剁殑鎴愮哗 
 		};
 };
 

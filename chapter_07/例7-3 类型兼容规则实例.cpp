@@ -1,35 +1,35 @@
-//7-3.cpp ÀàĞÍ¼æÈİ¹æÔòÊµÀı
+//7-3.cpp ç±»å‹å…¼å®¹è§„åˆ™å®ä¾‹
 
 #include<iostream>
 using namespace std;
 
-class Base1{                                   //»ùÀàBase1¶¨Òå 
+class Base1{                                   //åŸºç±»Base1å®šä¹‰ 
 	public:
 		void display() const {cout<<"Base1::display()"<<endl;}
 }; 
 
-class Base2:public Base1{                     //¹«ÓĞÅÉÉúÀàBase2¶¨Òå 
+class Base2:public Base1{                     //å…¬æœ‰æ´¾ç”Ÿç±»Base2å®šä¹‰ 
 	public:
 		void display() const {cout<<"Base2::display()"<<endl;}
 };
 
-class Derived:public Base2{                 //¹«ÓĞÅÉÉúÀàDerived¶¨Òå 
+class Derived:public Base2{                 //å…¬æœ‰æ´¾ç”Ÿç±»Derivedå®šä¹‰ 
 	public:
 		void display() const {cout<<"Derived::display()"<<endl;}
 };
 
-void fun(Base1 *ptr){                        //²ÎÊıÎªÖ¸Ïò»ùÀà¶ÔÏóµÄÖ¸Õë 
-	ptr->display();                          //¡°¶ÔÏóÖ¸Õë->³ÉÔ±Ãû¡± 
+void fun(Base1 *ptr){                        //å‚æ•°ä¸ºæŒ‡å‘åŸºç±»å¯¹è±¡çš„æŒ‡é’ˆ 
+	ptr->display();                          //â€œå¯¹è±¡æŒ‡é’ˆ->æˆå‘˜åâ€ 
 }
 
-int main(){                                  //Ö÷º¯Êı 
-	Base1 base1;                             //ÉùÃ÷Base1Àà¶ÔÏó 
-	Base2 base2;                             //ÉùÃ÷Base2Àà¶ÔÏó 
-	Derived derived;                         //ÉùÃ÷DerivedÀà¶ÔÏó 
+int main(){                                  //ä¸»å‡½æ•° 
+	Base1 base1;                             //å£°æ˜Base1ç±»å¯¹è±¡ 
+	Base2 base2;                             //å£°æ˜Base2ç±»å¯¹è±¡ 
+	Derived derived;                         //å£°æ˜Derivedç±»å¯¹è±¡ 
 	
-	fun(&base1);                             //ÓÃBase1Àà¶ÔÏóµÄÖ¸Õëµ÷ÓÃfunº¯Êı 
-	fun(&base2);                             //ÓÃBase2Àà¶ÔÏóµÄÖ¸Õëµ÷ÓÃfunº¯Êı 
-	fun(&derived);                           //ÓÃDerivedÀà¶ÔÏóµÄÖ¸Õëµ÷ÓÃfunº¯Êı 
+	fun(&base1);                             //ç”¨Base1ç±»å¯¹è±¡çš„æŒ‡é’ˆè°ƒç”¨funå‡½æ•° 
+	fun(&base2);                             //ç”¨Base2ç±»å¯¹è±¡çš„æŒ‡é’ˆè°ƒç”¨funå‡½æ•° 
+	fun(&derived);                           //ç”¨Derivedç±»å¯¹è±¡çš„æŒ‡é’ˆè°ƒç”¨funå‡½æ•° 
 	
 	return 0;
 }

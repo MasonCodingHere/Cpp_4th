@@ -1,26 +1,26 @@
-//accumulator.h °´ÈÕ½«ÊýÖµÀÛ¼ÓµÄAccumulatorÀàµÄÍ·ÎÄ¼þ
+//accumulator.h æŒ‰æ—¥å°†æ•°å€¼ç´¯åŠ çš„Accumulatorç±»çš„å¤´æ–‡ä»¶
 
 #ifndef __ACCUMULATOR_H__
 #define __ACCUMULATOR_H__
 #include "date.h"
 
-class Accumulator{                                  //½«Ä³¸öÊýÖµ°´ÈÕÀÛ¼Ó 
+class Accumulator{                                  //å°†æŸä¸ªæ•°å€¼æŒ‰æ—¥ç´¯åŠ  
 	private:
-		Date lastDate;                              //ÉÏ´Î±ä¸üÊýÖµµÄÈÕÆÚ 
-		double value;                               //ÊýÖµµÄµ±Ç°Öµ 
-		double sum;                                 //ÊýÖµ°´ÈÕÀÛ¼ÓÖ®ºÍ 
+		Date lastDate;                              //ä¸Šæ¬¡å˜æ›´æ•°å€¼çš„æ—¥æœŸ 
+		double value;                               //æ•°å€¼çš„å½“å‰å€¼ 
+		double sum;                                 //æ•°å€¼æŒ‰æ—¥ç´¯åŠ ä¹‹å’Œ 
 	public:
-		//¹¹Ôìº¯Êý£¬dateÎª¿ªÊ¼ÀÛ¼ÓµÄÈÕÆÚ£¬valueÎª³õÊ¼Öµ
+		//æž„é€ å‡½æ•°ï¼Œdateä¸ºå¼€å§‹ç´¯åŠ çš„æ—¥æœŸï¼Œvalueä¸ºåˆå§‹å€¼
 		Accumulator(const Date &date,double value):lastDate(date),value(value),sum(0){}
-		//»ñµÃÈÕÆÚdateµÄÀÛ¼Ó½á¹û
+		//èŽ·å¾—æ—¥æœŸdateçš„ç´¯åŠ ç»“æžœ
 		double getSum(const Date &date) const {return sum+value*date.distance(lastDate);}
-		//ÔÚdate½«ÊýÖµ±ä¸üÎªvalue
+		//åœ¨dateå°†æ•°å€¼å˜æ›´ä¸ºvalue
 		void change(const Date &date,double value){
 			sum=getSum(date);
 			lastDate=date;
 			this->value=value;
 		} 
-		//³õÊ¼»¯£¬½«ÈÕÆÚ±ä¸üÎªdate£¬ÊýÖµ±äÎªvalue£¬ÀÛ¼ÓÆ÷ÇåÁã
+		//åˆå§‹åŒ–ï¼Œå°†æ—¥æœŸå˜æ›´ä¸ºdateï¼Œæ•°å€¼å˜ä¸ºvalueï¼Œç´¯åŠ å™¨æ¸…é›¶
 		void reset(const Date &date,double value){
 			lastDate=date;
 			this->value=value;

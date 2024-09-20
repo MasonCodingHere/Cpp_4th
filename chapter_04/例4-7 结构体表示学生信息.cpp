@@ -1,15 +1,15 @@
-//ÓÃ½á¹¹Ìå±íÊ¾Ñ§ÉúµÄ»ù±¾ĞÅÏ¢ 
+//ç”¨ç»“æ„ä½“è¡¨ç¤ºå­¦ç”Ÿçš„åŸºæœ¬ä¿¡æ¯ 
 
 #include<iostream>
 #include<iomanip>
 #include<string>
 using namespace std;
 
-struct Student{                                      //Ñ§ÉúĞÅÏ¢½á¹¹Ìå 
-	int num;                                         //Ñ§ºÅ 
-	string name;                                     //ĞÕÃû 
-	char sex;                                        //ĞÔ±ğ 
-	int age;                                         //ÄêÁä 
+struct Student{                                      //å­¦ç”Ÿä¿¡æ¯ç»“æ„ä½“ 
+	int num;                                         //å­¦å· 
+	string name;                                     //å§“å 
+	char sex;                                        //æ€§åˆ« 
+	int age;                                         //å¹´é¾„ 
 };
 
 int main(){

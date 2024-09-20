@@ -1,26 +1,26 @@
-//Ï°Ìâ2-26.ÏòÓÃ»§ÌáÎÊ¡°ÏÖÔÚÕýÔÚÏÂÓêÂð£¿¡±£¬ÌáÊ¾ÓÃ»§ÊäÈëY»òN¡£
-//ÈôÊäÈëÎªY£¬ÏÔÊ¾¡°ÏÖÔÚÕýÔÚÏÂÓê¡£¡±£»
-//ÈôÊäÈëÎªN£¬ÏÔÊ¾¡°ÏÖÔÚÃ»ÓÐÏÂÓê¡£¡±£»
-//·ñÔò¼ÌÐøÌáÎÊ¡°ÏÖÔÚÕýÔÚÏÂÓêÂð£¿¡±¡£ 
+//ä¹ é¢˜2-26.å‘ç”¨æˆ·æé—®â€œçŽ°åœ¨æ­£åœ¨ä¸‹é›¨å—ï¼Ÿâ€ï¼Œæç¤ºç”¨æˆ·è¾“å…¥Yæˆ–Nã€‚
+//è‹¥è¾“å…¥ä¸ºYï¼Œæ˜¾ç¤ºâ€œçŽ°åœ¨æ­£åœ¨ä¸‹é›¨ã€‚â€ï¼›
+//è‹¥è¾“å…¥ä¸ºNï¼Œæ˜¾ç¤ºâ€œçŽ°åœ¨æ²¡æœ‰ä¸‹é›¨ã€‚â€ï¼›
+//å¦åˆ™ç»§ç»­æé—®â€œçŽ°åœ¨æ­£åœ¨ä¸‹é›¨å—ï¼Ÿâ€ã€‚ 
 
 #include<iostream>
 using namespace std;
 
 int main(){
 	char que;
-	cout<<"ÏÖÔÚÏÂÓêÂð£¿£¨ÇëÊäÈëY»òN£©"<<endl;
+	cout<<"çŽ°åœ¨ä¸‹é›¨å—ï¼Ÿï¼ˆè¯·è¾“å…¥Yæˆ–Nï¼‰"<<endl;
 	cin>>que;
 	while(que){
 	if(que=='Y'){
-	    cout<<"ÏÖÔÚÕýÔÚÏÂÓê¡£";
+	    cout<<"çŽ°åœ¨æ­£åœ¨ä¸‹é›¨ã€‚";
 	    break;
 	}
 	else if(que=='N'){
-	    cout<<"ÏÖÔÚÃ»ÓÐÏÂÓê¡£";
+	    cout<<"çŽ°åœ¨æ²¡æœ‰ä¸‹é›¨ã€‚";
 	    break;
 	}
 	else
-	    cout<<"ÏÖÔÚÏÂÓêÂð£¿£¨ÇëÊäÈëY»òN£©"<<endl;
+	    cout<<"çŽ°åœ¨ä¸‹é›¨å—ï¼Ÿï¼ˆè¯·è¾“å…¥Yæˆ–Nï¼‰"<<endl;
 	    cin>>que;
 	    continue;
 	}

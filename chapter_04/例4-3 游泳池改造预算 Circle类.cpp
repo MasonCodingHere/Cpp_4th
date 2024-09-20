@@ -1,49 +1,49 @@
 #include<iostream>
 using namespace std;
 
-const float PI=3.141593;                         //¸ø³öPIµÄÖµ 
-const float FENCE_PRICE=35;                      //Õ¤À¸µÄµ¥¼Û 
-const float CONCRETE_PRICE=20;                   //¹ıµÀË®Äàµ¥¼Û 
+const float PI=3.141593;                         //ç»™å‡ºPIçš„å€¼ 
+const float FENCE_PRICE=35;                      //æ …æ çš„å•ä»· 
+const float CONCRETE_PRICE=20;                   //è¿‡é“æ°´æ³¥å•ä»· 
 
-class Circle{                                    //ÉùÃ÷¶¨ÒåÀàCircle¼°ÆäÊı¾İºÍ·½·¨ 
-	public:                                      //Íâ²¿½Ó¿Ú 
-		Circle(float r);                         //¹¹Ôìº¯Êı 
-		float circumference();                   //¼ÆËãÔ²µÄÖÜ³¤ 
-		float area();                            //¼ÆËãÔ²µÄÃæ»ı 
-	private:                                     //Ë½ÓĞÊı¾İ³ÉÔ± 
-		float radius;                            //Ô²µÄ°ë¾¶ 
+class Circle{                                    //å£°æ˜å®šä¹‰ç±»CircleåŠå…¶æ•°æ®å’Œæ–¹æ³• 
+	public:                                      //å¤–éƒ¨æ¥å£ 
+		Circle(float r);                         //æ„é€ å‡½æ•° 
+		float circumference();                   //è®¡ç®—åœ†çš„å‘¨é•¿ 
+		float area();                            //è®¡ç®—åœ†çš„é¢ç§¯ 
+	private:                                     //ç§æœ‰æ•°æ®æˆå‘˜ 
+		float radius;                            //åœ†çš„åŠå¾„ 
 }; 
 
 
-//ÀàµÄÊµÏÖ
-//¹¹Ôìº¯Êı³õÊ¼»¯Êı¾İ³ÉÔ±  radius
+//ç±»çš„å®ç°
+//æ„é€ å‡½æ•°åˆå§‹åŒ–æ•°æ®æˆå‘˜  radius
 Circle::Circle(float r){
 	radius=r;
 } 
 
-//¼ÆËãÔ²µÄÖÜ³¤
+//è®¡ç®—åœ†çš„å‘¨é•¿
 float Circle::circumference(){
 	return 2*PI*radius;
 } 
 
-//¼ÆËãÔ²µÄÃæ»ı
+//è®¡ç®—åœ†çš„é¢ç§¯
 float Circle::area(){
 	return PI*radius*radius;
 } 
 
-//Ö÷º¯ÊıÊµÏÖ
+//ä¸»å‡½æ•°å®ç°
 int main(){
 	float radius;
-	cout<<"Enter the radius of the pool: ";       //ÌáÊ¾ÓÃ»§ÊäÈë°ë¾¶ 
+	cout<<"Enter the radius of the pool: ";       //æç¤ºç”¨æˆ·è¾“å…¥åŠå¾„ 
 	cin>>radius;
-	Circle pool(radius);                          //ÓÎÓ¾³Ø±ß½ç¶ÔÏó 
-	Circle poolRim(radius+3);                     //Õ¤À¸¶ÔÏó 
+	Circle pool(radius);                          //æ¸¸æ³³æ± è¾¹ç•Œå¯¹è±¡ 
+	Circle poolRim(radius+3);                     //æ …æ å¯¹è±¡ 
 	
-	//¼ÆËãÕ¤À¸Ôì¼ÛÊä³ö
+	//è®¡ç®—æ …æ é€ ä»·è¾“å‡º
 	float fenceCost=poolRim.circumference()*FENCE_PRICE;
 	cout<<"Fencing Cost is $"<<fenceCost<<endl;
 	
-	//¼ÆËã¹ıµÀÔì¼ÛÊä³ö
+	//è®¡ç®—è¿‡é“é€ ä»·è¾“å‡º
 	float concreteCost=(poolRim.area()-pool.area())*CONCRETE_PRICE;
 	cout<<"Concrete Cost is $"<<concreteCost<<endl;
 	

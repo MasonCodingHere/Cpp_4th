@@ -6,10 +6,10 @@
 using namespace std;
 
 int main(){
-	Rectangle rect;                                               //¶¨ÒåRectangleÀàµÄ¶ÔÏó 
-	rect.initRectangle(2,3,20,10);                                //ÉèÖÃ¾ØĞÎµÄÊı¾İ 
-	rect.move(3,2);                                               //ÒÆ¶¯¾ØĞÎÎ»ÖÃ 
+	Rectangle rect;                                               //å®šä¹‰Rectangleç±»çš„å¯¹è±¡ 
+	rect.initRectangle(2,3,20,10);                                //è®¾ç½®çŸ©å½¢çš„æ•°æ® 
+	rect.move(3,2);                                               //ç§»åŠ¨çŸ©å½¢ä½ç½® 
 	cout<<"The data of rect(x,y,w,h): "<<endl;
-	cout<<rect.getX()<<","<<rect.getY()<<","<<rect.getW()<<","<<rect.getH()<<endl;   //Êä³ö¾ØĞÎµÄÌØÕ÷²ÎÊı 
+	cout<<rect.getX()<<","<<rect.getY()<<","<<rect.getW()<<","<<rect.getH()<<endl;   //è¾“å‡ºçŸ©å½¢çš„ç‰¹å¾å‚æ•° 
 	return 0;
 }

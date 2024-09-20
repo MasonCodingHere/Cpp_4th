@@ -1,20 +1,20 @@
-//LinearEqu.h ÎÄ¼ş¶ş£¬LinearEquÀà¶¨Òå
+//LinearEqu.h æ–‡ä»¶äºŒï¼ŒLinearEquç±»å®šä¹‰
 
 #ifndef _LINEAR_EQU_H
 #define _LINEAR_EQU_H
 #include "Matrix.h"
 
-class LinearEqu:public Matrix{               //¹«ÓĞÅÉÉúÀàLinearEqu¶¨Òå 
-	public:                                  //Íâ²¿½Ó¿Ú 
-		LinearEqu(int size=2);               //¹¹Ôìº¯Êı 
-		~LinearEqu();                        //Îö¹¹º¯Êı 
-		void setLinearEqu(const double *a,const double *b);     //·½³Ì¸³Öµ 
-		bool solve();                               //È«Ñ¡Ö÷Ôª¸ßË¹ÏûÈ¥·¨Çó½â·½³Ì 
-		void printLinearEqu() const;             //ÏÔÊ¾·½³Ì 
-		void printSolution() const;             //ÏÔÊ¾·½³ÌµÄ½â 
-	private:                                    //Ë½ÓĞÊı¾İ 
-		double *sums;                         //·½³ÌÓÒ¶ËÏî 
-		double *solution;                     //·½³ÌµÄ½â 
+class LinearEqu:public Matrix{               //å…¬æœ‰æ´¾ç”Ÿç±»LinearEquå®šä¹‰ 
+	public:                                  //å¤–éƒ¨æ¥å£ 
+		LinearEqu(int size=2);               //æ„é€ å‡½æ•° 
+		~LinearEqu();                        //ææ„å‡½æ•° 
+		void setLinearEqu(const double *a,const double *b);     //æ–¹ç¨‹èµ‹å€¼ 
+		bool solve();                               //å…¨é€‰ä¸»å…ƒé«˜æ–¯æ¶ˆå»æ³•æ±‚è§£æ–¹ç¨‹ 
+		void printLinearEqu() const;             //æ˜¾ç¤ºæ–¹ç¨‹ 
+		void printSolution() const;             //æ˜¾ç¤ºæ–¹ç¨‹çš„è§£ 
+	private:                                    //ç§æœ‰æ•°æ® 
+		double *sums;                         //æ–¹ç¨‹å³ç«¯é¡¹ 
+		double *solution;                     //æ–¹ç¨‹çš„è§£ 
 }; 
 
 #endif                                        //_LINEAR_EQU_H 

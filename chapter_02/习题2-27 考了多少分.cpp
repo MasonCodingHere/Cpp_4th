@@ -1,5 +1,5 @@
-//Ï°Ìâ2-27.ÏòÓÃ»§ÌáÎÊ¡°Äã¿¼ÊÔ¿¼ÁË¶àÉÙ·Ö£¿£¨0¡«100£©¡±£¬½ÓÊÜÊäÈëºóÅÐ¶ÏÆäµÈ¼¶ÏÔÊ¾³öÀ´¡£¹æÔòÈçÏÂ£º
-//ÓÅ£¨90¡«100£©¡¢Á¼£¨80¡«90£©¡¢ÖÐ£¨60¡«80£©¡¢²î£¨0¡«60£©¡£ 
+//ä¹ é¢˜2-27.å‘ç”¨æˆ·æé—®â€œä½ è€ƒè¯•è€ƒäº†å¤šå°‘åˆ†ï¼Ÿï¼ˆ0ï½ž100ï¼‰â€ï¼ŒæŽ¥å—è¾“å…¥åŽåˆ¤æ–­å…¶ç­‰çº§æ˜¾ç¤ºå‡ºæ¥ã€‚è§„åˆ™å¦‚ä¸‹ï¼š
+//ä¼˜ï¼ˆ90ï½ž100ï¼‰ã€è‰¯ï¼ˆ80ï½ž90ï¼‰ã€ä¸­ï¼ˆ60ï½ž80ï¼‰ã€å·®ï¼ˆ0ï½ž60ï¼‰ã€‚ 
 
 
 
@@ -9,15 +9,15 @@ using namespace std;
 
 int main(){
 	int score;
-	cout<<"Äã¿¼ÊÔ¿¼ÁË¶àÉÙ·Ö£¿£¨0¡«100£©"<<endl;
+	cout<<"ä½ è€ƒè¯•è€ƒäº†å¤šå°‘åˆ†ï¼Ÿï¼ˆ0ï½ž100ï¼‰"<<endl;
 	cin>>score;
 	if(score>=90&&score<=100)
-	    cout<<"ÓÅ"<<endl;
+	    cout<<"ä¼˜"<<endl;
 	else if(score>=80&&score<90)
-	    cout<<"Á¼"<<endl;
+	    cout<<"è‰¯"<<endl;
 	else if(score>=60&&score<80)
-	    cout<<"ÖÐ"<<endl;
+	    cout<<"ä¸­"<<endl;
 	else
-	    cout<<"²î"<<endl;
+	    cout<<"å·®"<<endl;
 	return 0; 
 } 

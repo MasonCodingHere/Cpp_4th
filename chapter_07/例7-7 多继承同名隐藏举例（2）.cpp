@@ -1,35 +1,35 @@
-//Àı7-7.cpp ¶à¼Ì³ĞÍ¬ÃûÒş²Ø¾ÙÀı£¨2£©
+//ä¾‹7-7.cpp å¤šç»§æ‰¿åŒåéšè—ä¸¾ä¾‹ï¼ˆ2ï¼‰
 
 #include<iostream>
 using namespace std;
 
-class Base0{                             //¶¨Òå»ùÀàBase0 
+class Base0{                             //å®šä¹‰åŸºç±»Base0 
 	public:
 		int var0;
 		void fun0(){cout<<"Member of Base0"<<endl;}
 }; 
 
-class Base1:public Base0{                //¶¨ÒåÅÉÉúÀàBase1 
-	public:                              //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Base1:public Base0{                //å®šä¹‰æ´¾ç”Ÿç±»Base1 
+	public:                              //æ–°å¢å¤–éƒ¨æ¥å£ 
 		int var1;
 };
 
-class Base2:public Base0{                //¶¨ÒåÅÉÉúÀàBase2 
-	public:                              //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Base2:public Base0{                //å®šä¹‰æ´¾ç”Ÿç±»Base2 
+	public:                              //æ–°å¢å¤–éƒ¨æ¥å£ 
 		int var2;
 };
 
-class Derived:public Base1,public Base2{  //¶¨ÒåÅÉÉúÀàDerived 
-	public:                               //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Derived:public Base1,public Base2{  //å®šä¹‰æ´¾ç”Ÿç±»Derived 
+	public:                               //æ–°å¢å¤–éƒ¨æ¥å£ 
 		int var;
 		void fun(){cout<<"Member of Derived"<<endl;}
 };
 
-int main(){                              //³ÌĞòÖ÷º¯Êı 
-	Derived d;                           //¶¨ÒåDerivedÀà¶ÔÏód 
-	d.Base1::var0=2;                     //Ê¹ÓÃÖ±½Ó»ùÀà 
+int main(){                              //ç¨‹åºä¸»å‡½æ•° 
+	Derived d;                           //å®šä¹‰Derivedç±»å¯¹è±¡d 
+	d.Base1::var0=2;                     //ä½¿ç”¨ç›´æ¥åŸºç±» 
 	d.Base1::fun0();
-	d.Base2::var0=3;                     //Ê¹ÓÃÖ±½Ó»ùÀà 
+	d.Base2::var0=3;                     //ä½¿ç”¨ç›´æ¥åŸºç±» 
 	d.Base2::fun0();
 	return 0;
 }

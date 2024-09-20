@@ -1,14 +1,14 @@
-//8_7.cpp ÎÄ¼şÈı£¬Ö÷º¯Êı
+//8_7.cpp æ–‡ä»¶ä¸‰ï¼Œä¸»å‡½æ•°
 
-#include "Trapzint.h"            //Àà¶¨ÒåÍ·ÎÄ¼ş 
+#include "Trapzint.h"            //ç±»å®šä¹‰å¤´æ–‡ä»¶ 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-int main(){                      //Ö÷º¯Êı 
-	MyFunction f;                //¶¨ÒåMyFunctionÀàµÄ¶ÔÏó 
-	Trapz trapz(f);              //¶¨ÒåTrapzÀàµÄ¶ÔÏó 
-	//¼ÆËã²¢Êä³ö»ı·Ö½á¹û
+int main(){                      //ä¸»å‡½æ•° 
+	MyFunction f;                //å®šä¹‰MyFunctionç±»çš„å¯¹è±¡ 
+	Trapz trapz(f);              //å®šä¹‰Trapzç±»çš„å¯¹è±¡ 
+	//è®¡ç®—å¹¶è¾“å‡ºç§¯åˆ†ç»“æœ
 	cout<<"TRAPZ Int: "<<setprecision(7)<<trapz(0,2,1e-7)<<endl;
 	return 0; 
 } 

@@ -1,28 +1,28 @@
-//LinearEqu.cpp ÎÄ¼şËÄ£¬LinearEquÀàÊµÏÖ
+//LinearEqu.cpp æ–‡ä»¶å››ï¼ŒLinearEquç±»å®ç°
 
-#include "LinearEqu.h"                           //°üº¬ÀàµÄ¶¨ÒåÍ·ÎÄ¼ş 
+#include "LinearEqu.h"                           //åŒ…å«ç±»çš„å®šä¹‰å¤´æ–‡ä»¶ 
 #include<iostream>
 #include<cmath>
 using namespace std;
 
-LinearEqu::LinearEqu(int size/*=2*/):Matrix(size){   //ÓÃsizeµ÷ÓÃ»ùÀà¹¹Ôìº¯Êı 
-	sums=new double[size];                         //¶¯Ì¬ÄÚ´æ·ÖÅä 
+LinearEqu::LinearEqu(int size/*=2*/):Matrix(size){   //ç”¨sizeè°ƒç”¨åŸºç±»æ„é€ å‡½æ•° 
+	sums=new double[size];                         //åŠ¨æ€å†…å­˜åˆ†é… 
 	solution=new double[size];
 } 
 
-LinearEqu::~LinearEqu(){                    //ÅÉÉúÀàLinearEquµÄÎö¹¹º¯Êı 
-	delete[] sums;                          //ÊÍ·ÅÄÚ´æ 
+LinearEqu::~LinearEqu(){                    //æ´¾ç”Ÿç±»LinearEquçš„ææ„å‡½æ•° 
+	delete[] sums;                          //é‡Šæ”¾å†…å­˜ 
 	delete[] solution;
-	//»á×Ô¶¯µ÷ÓÃ»ùÀàÎö¹¹º¯Êı 
+	//ä¼šè‡ªåŠ¨è°ƒç”¨åŸºç±»ææ„å‡½æ•° 
 }
 
-void LinearEqu::setLinearEqu(const double *a,const double *b){      //ÉèÖÃÏßĞÔ·½³Ì×é 
-	setMatrix(a);                                  //µ÷ÓÃ»ùÀàº¯Êı 
+void LinearEqu::setLinearEqu(const double *a,const double *b){      //è®¾ç½®çº¿æ€§æ–¹ç¨‹ç»„ 
+	setMatrix(a);                                  //è°ƒç”¨åŸºç±»å‡½æ•° 
 	for(int i=0;i<getSize();i++)
 	    sums[i]=b[i];
 }
 
-void LinearEqu::printLinearEqu() const{                       //ÏÔÊ¾ÏßĞÔ·½³Ì×é 
+void LinearEqu::printLinearEqu() const{                       //æ˜¾ç¤ºçº¿æ€§æ–¹ç¨‹ç»„ 
     cout<<"The Line eqution is:"<<endl;
     for(int i=0;i<getSize();i++){
     	for(int j=0;j<getSize();j++)
@@ -31,23 +31,23 @@ void LinearEqu::printLinearEqu() const{                       //ÏÔÊ¾ÏßĞÔ·½³Ì×é
     }
 }
 
-void LinearEqu::printSolution() const{                     //Êä³ö·½³ÌµÄ½â 
+void LinearEqu::printSolution() const{                     //è¾“å‡ºæ–¹ç¨‹çš„è§£ 
     cout<<"The Result is: "<<endl;
     for(int i=0;i<getSize();i++)
         cout<<"x["<<i<<"]="<<solution[i]<<endl;
 }
 
-inline void swap(double &v1,double &v2){                  //½»»»Á½¸öÊµÊı 
+inline void swap(double &v1,double &v2){                  //äº¤æ¢ä¸¤ä¸ªå®æ•° 
 	double temp=v1;
 	v1=v2;
 	v2=temp;
 }
 
-bool LinearEqu::solve(){                       //È«Ñ¡Ö÷ÔªËØ¸ßË¹ÏûÈ¥·¨Çó½â·½³Ì 
-	int *js=new int[getSize()];                //´æ´¢Ö÷ÔªËØËùÔÚÁĞºÅµÄÊı×é 
-	for(int k=0;k<getSize()-1;k++){              //Ñ¡Ö÷ÔªËØ 
-		int is;                                 //Ö÷ÔªËØËùÔÚĞĞºÅ 
-		double max=0;                           //ËùÓĞÔªËØµÄ×î´óÖµ 
+bool LinearEqu::solve(){                       //å…¨é€‰ä¸»å…ƒç´ é«˜æ–¯æ¶ˆå»æ³•æ±‚è§£æ–¹ç¨‹ 
+	int *js=new int[getSize()];                //å­˜å‚¨ä¸»å…ƒç´ æ‰€åœ¨åˆ—å·çš„æ•°ç»„ 
+	for(int k=0;k<getSize()-1;k++){              //é€‰ä¸»å…ƒç´  
+		int is;                                 //ä¸»å…ƒç´ æ‰€åœ¨è¡Œå· 
+		double max=0;                           //æ‰€æœ‰å…ƒç´ çš„æœ€å¤§å€¼ 
 		for(int i=k;i<getSize();i++)
 		    for(int j=k;j<getSize();j++){
 		    	double t=fabs(element(i,j));
@@ -61,7 +61,7 @@ bool LinearEqu::solve(){                       //È«Ñ¡Ö÷ÔªËØ¸ßË¹ÏûÈ¥·¨Çó½â·½³Ì
 			delete[] js;
 			return false;
 		}
-		else{  //Í¨¹ıĞĞÁĞ½»»»£¬°ÑÖ÷ÔªËØ½»»»µ½µÚkĞĞµÚkÁĞ
+		else{  //é€šè¿‡è¡Œåˆ—äº¤æ¢ï¼ŒæŠŠä¸»å…ƒç´ äº¤æ¢åˆ°ç¬¬kè¡Œç¬¬kåˆ—
 		    if(js[k]!=k)
 			    for(int i=0;i<getSize();i++)
 				    swap(element(i,k),element(i,js[k]));
@@ -71,7 +71,7 @@ bool LinearEqu::solve(){                       //È«Ñ¡Ö÷ÔªËØ¸ßË¹ÏûÈ¥·¨Çó½â·½³Ì
 				    swap(sums[k],sums[is]);
 			} 
 		}
-		                                      //ÏûÈ¥¹ı³Ì 
+		                                      //æ¶ˆå»è¿‡ç¨‹ 
 		double major=element(k,k);
 		for(int j=k+1;j<getSize();j++)
 		    element(k,j)/=major;
@@ -82,13 +82,13 @@ bool LinearEqu::solve(){                       //È«Ñ¡Ö÷ÔªËØ¸ßË¹ÏûÈ¥·¨Çó½â·½³Ì
 			sums[i]-=element(i,k)*sums[k];
 		}
 	}
-	//ÅĞ¶ÏÊ£ÏÂµÄÒ»¸öÔªËØÊÇ·ñµÈÓÚÁã
+	//åˆ¤æ–­å‰©ä¸‹çš„ä¸€ä¸ªå…ƒç´ æ˜¯å¦ç­‰äºé›¶
 	double d=element(getSize()-1,getSize()-1);
 	if(fabs(d)<1e-15){
 		delete[] js;
 		return false;
 	} 
-	//»Ø´ú¹ı³Ì
+	//å›ä»£è¿‡ç¨‹
 	solution[getSize()-1]=sums[getSize()-1]/d;
 	for(int i=getSize()-2;i>=0;i--){
 		double t=0.0;

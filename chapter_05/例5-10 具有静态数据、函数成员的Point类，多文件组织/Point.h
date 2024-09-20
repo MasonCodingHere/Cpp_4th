@@ -1,14 +1,14 @@
-//ÎÄ¼ş1£¬ÀàµÄ¶¨Òå£¬point.h
+//æ–‡ä»¶1ï¼Œç±»çš„å®šä¹‰ï¼Œpoint.h
 
-class Point{                                    //ÀàµÄ¶¨Òå 
-	public:                                     //Íâ²¿½Ó¿Ú 
+class Point{                                    //ç±»çš„å®šä¹‰ 
+	public:                                     //å¤–éƒ¨æ¥å£ 
 		Point(int x=0,int y=0):x(x),y(y){}
 		Point(const Point &p);
 		~Point(){count--;}
 		int getX(){return x;}
 		int getY(){return y;}
-		static void showCount();               //¾²Ì¬º¯Êı³ÉÔ± 
-	private:                                   //Ë½ÓĞÊı¾İ³ÉÔ± 
+		static void showCount();               //é™æ€å‡½æ•°æˆå‘˜ 
+	private:                                   //ç§æœ‰æ•°æ®æˆå‘˜ 
 		int x,y;
-		static int count;                      //¾²Ì¬Êı¾İ³ÉÔ± 
+		static int count;                      //é™æ€æ•°æ®æˆå‘˜ 
 }; 

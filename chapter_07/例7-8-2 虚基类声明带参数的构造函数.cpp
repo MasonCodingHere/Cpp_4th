@@ -1,37 +1,37 @@
-//Ğé»ùÀà¼°ÆäÅÉÉúÀà¹¹Ôìº¯Êı
-//Ğé»ùÀàÉùÃ÷ÁË´ø²ÎÊıµÄ¹¹Ôìº¯Êı
+//è™šåŸºç±»åŠå…¶æ´¾ç”Ÿç±»æ„é€ å‡½æ•°
+//è™šåŸºç±»å£°æ˜äº†å¸¦å‚æ•°çš„æ„é€ å‡½æ•°
 
 #include<iostream>
 using namespace std;
 
-class Base0{                            //¶¨Òå»ùÀàBase0 
-	public:                             //Íâ²¿½Ó¿Ú 
+class Base0{                            //å®šä¹‰åŸºç±»Base0 
+	public:                             //å¤–éƒ¨æ¥å£ 
 		Base0(int var):var0(var){}
 		int var0;
 		void fun0(){cout<<"Member of Base0"<<endl;}
 }; 
 
-class Base1:virtual public Base0{         //Base0ÎªĞé»ùÀà£¬ÅÉÉúBase1Àà 
-	public:                               //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Base1:virtual public Base0{         //Base0ä¸ºè™šåŸºç±»ï¼Œæ´¾ç”ŸBase1ç±» 
+	public:                               //æ–°å¢å¤–éƒ¨æ¥å£ 
 		Base1(int var):Base0(var){}
 		int var1;
 };
 
-class Base2:virtual public Base0{         //Base0ÎªĞé»ùÀà£¬ÅÉÉúBase2Àà 
-	public:                               //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Base2:virtual public Base0{         //Base0ä¸ºè™šåŸºç±»ï¼Œæ´¾ç”ŸBase2ç±» 
+	public:                               //æ–°å¢å¤–éƒ¨æ¥å£ 
 		Base2(int var):Base0(var){}
 		int var2;
 };
 
-class Derived:public Base1,public Base2{   //ÅÉÉúÀàDerived¶¨Òå 
-	public:                                //ĞÂÔöÍâ²¿½Ó¿Ú 
+class Derived:public Base1,public Base2{   //æ´¾ç”Ÿç±»Derivedå®šä¹‰ 
+	public:                                //æ–°å¢å¤–éƒ¨æ¥å£ 
 		Derived(int var):Base0(var),Base1(var),Base2(var){}
 		int var;
 		void fun(){cout<<"Member of Derived"<<endl;}
 };
 
-int main(){                                //³ÌĞòÖ÷º¯Êı 
-	Derived d(1);                             //¶¨ÒåDerivedÀà¶ÔÏód 
+int main(){                                //ç¨‹åºä¸»å‡½æ•° 
+	Derived d(1);                             //å®šä¹‰Derivedç±»å¯¹è±¡d 
 	d.var=2;
 	d.fun();
 	return 0;

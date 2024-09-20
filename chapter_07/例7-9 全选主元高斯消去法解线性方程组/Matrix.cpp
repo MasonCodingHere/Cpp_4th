@@ -1,23 +1,23 @@
-//Matrix.cpp ÎÄ¼şÈı£¬MatrixÀàÊµÏÖ
+//Matrix.cpp æ–‡ä»¶ä¸‰ï¼ŒMatrixç±»å®ç°
 
-#include "Matrix.h"                          //°üº¬ÀàµÄ¶¨ÒåÍ·ÎÄ¼ş 
+#include "Matrix.h"                          //åŒ…å«ç±»çš„å®šä¹‰å¤´æ–‡ä»¶ 
 #include<iostream>
 using namespace std;
 
-void Matrix::setMatrix(const double *values){    //ÉèÖÃ¾ØÕó 
+void Matrix::setMatrix(const double *values){    //è®¾ç½®çŸ©é˜µ 
 	for(int i=0;i<size*size;i++)
-	    elements[i]=values[i];                    //¾ØÕó³ÉÔ±¸³³õÖµ 
+	    elements[i]=values[i];                    //çŸ©é˜µæˆå‘˜èµ‹åˆå€¼ 
 } 
 
-Matrix::Matrix(int size/*=2*/):size(size){       //¾ØÕóMatrixÀàµÄ¹¹Ôìº¯Êı 
-	elements=new double[size*size];              //¶¯Ì¬ÄÚ´æ·ÖÅä 
+Matrix::Matrix(int size/*=2*/):size(size){       //çŸ©é˜µMatrixç±»çš„æ„é€ å‡½æ•° 
+	elements=new double[size*size];              //åŠ¨æ€å†…å­˜åˆ†é… 
 }
 
-Matrix::~Matrix(){                               //¾ØÕóMatrixÀàµÄÎö¹¹º¯Êı 
-	delete[] elements;                            //ÄÚ´æÊÍ·Å 
+Matrix::~Matrix(){                               //çŸ©é˜µMatrixç±»çš„ææ„å‡½æ•° 
+	delete[] elements;                            //å†…å­˜é‡Šæ”¾ 
 }
 
-void Matrix::printMatrix() const{              //ÏÔÊ¾¾ØÕóµÄÔªËØ 
+void Matrix::printMatrix() const{              //æ˜¾ç¤ºçŸ©é˜µçš„å…ƒç´  
     cout<<"The Matrix is:"<<endl;
     for(int i=0;i<size;i++){
         for(int j=0;j<size;j++)

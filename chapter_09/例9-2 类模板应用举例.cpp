@@ -1,60 +1,60 @@
-//Àı9-2.cpp ÀàÄ£°åÓ¦ÓÃ¾ÙÀı
+//ä¾‹9-2.cpp ç±»æ¨¡æ¿åº”ç”¨ä¸¾ä¾‹
 
 #include<iostream>
 #include<cstdlib>
 using namespace std;
 
-struct Student{               //½á¹¹ÌåStudent 
-	int id;                   //Ñ§ºÅ 
-	float gpa;                //Æ½¾ù·Ö 
+struct Student{               //ç»“æ„ä½“Student 
+	int id;                   //å­¦å· 
+	float gpa;                //å¹³å‡åˆ† 
 }; 
 
-template<class T>             //ÀàÄ£°å 
+template<class T>             //ç±»æ¨¡æ¿ 
 class Store{
 	private:
-		T item;               //itemÓÃÓÚ´æ·ÅÈÎÒâÀàĞÍµÄÊı¾İ 
-		bool haveValue;       //haveValue±ê¼ÇitemÊÇ·ñÒÑ±»´æÈëÄÚÈİ 
+		T item;               //itemç”¨äºå­˜æ”¾ä»»æ„ç±»å‹çš„æ•°æ® 
+		bool haveValue;       //haveValueæ ‡è®°itemæ˜¯å¦å·²è¢«å­˜å…¥å†…å®¹ 
 	public:
-		Store();              //Ä¬ÈÏĞÎÊ½£¨ÎŞĞÎ²Î£©µÄ¹¹Ôìº¯Êı 
-		T &getElem();         //ÌáÈ¡Êı¾İº¯Êı 
-		void putElem(const T &x);  //´æÈëÊı¾İº¯Êı 
+		Store();              //é»˜è®¤å½¢å¼ï¼ˆæ— å½¢å‚ï¼‰çš„æ„é€ å‡½æ•° 
+		T &getElem();         //æå–æ•°æ®å‡½æ•° 
+		void putElem(const T &x);  //å­˜å…¥æ•°æ®å‡½æ•° 
 };
 
-//ÒÔÏÂÊµÏÖ¸÷³ÉÔ±º¯Êı
-template<class T>                 //Ä¬ÈÏ¹¹Ôìº¯ÊıµÄÊµÏÖ 
+//ä»¥ä¸‹å®ç°å„æˆå‘˜å‡½æ•°
+template<class T>                 //é»˜è®¤æ„é€ å‡½æ•°çš„å®ç° 
 Store<T>::Store():haveValue(false){} 
 
-template<class T>             //ÌáÈ¡Êı¾İº¯ÊıµÄÊµÏÖ 
+template<class T>             //æå–æ•°æ®å‡½æ•°çš„å®ç° 
 T &Store<T>::getElem(){
-	if(!haveValue){             //Èç¹ûÊÔÍ¼ÌáÈ¡Î´³õÊ¼»¯µÄÊı¾İ£¬Ôò³ÌĞòÖÕÖ¹ 
+	if(!haveValue){             //å¦‚æœè¯•å›¾æå–æœªåˆå§‹åŒ–çš„æ•°æ®ï¼Œåˆ™ç¨‹åºç»ˆæ­¢ 
 		cout<<"No item present!"<<endl;
-		exit(1);              //Ê¹³ÌĞòÍêÈ«ÍË³ö£¬·µ»Øµ½²Ù×÷ÏµÍ³ 
-		//²ÎÊı¿ÉÓÃÀ´±íÊ¾³ÌĞòÖÕÖ¹µÄÔ­Òò£¬¿ÉÒÔ±»²Ù×÷ÏµÍ³½ÓÊÕ 
+		exit(1);              //ä½¿ç¨‹åºå®Œå…¨é€€å‡ºï¼Œè¿”å›åˆ°æ“ä½œç³»ç»Ÿ 
+		//å‚æ•°å¯ç”¨æ¥è¡¨ç¤ºç¨‹åºç»ˆæ­¢çš„åŸå› ï¼Œå¯ä»¥è¢«æ“ä½œç³»ç»Ÿæ¥æ”¶ 
 	}
-	return item;          //·µ»ØitemÖĞ´æ·ÅµÄÊı¾İ 
+	return item;          //è¿”å›itemä¸­å­˜æ”¾çš„æ•°æ® 
 } 
 
-template<class T>             //´æÈëÊı¾İº¯ÊıµÄÊµÏÖ 
+template<class T>             //å­˜å…¥æ•°æ®å‡½æ•°çš„å®ç° 
 void Store<T>::putElem(const T &x){
-	haveValue=true;               //½«haveValueÖÃÎªtrue£¬±íÊ¾itemÖĞÒÑ´æÈëÊıÖµ 
-	item=x;                     //½«xÖµ´æÈëitem 
+	haveValue=true;               //å°†haveValueç½®ä¸ºtrueï¼Œè¡¨ç¤ºitemä¸­å·²å­˜å…¥æ•°å€¼ 
+	item=x;                     //å°†xå€¼å­˜å…¥item 
 }
 
 int main(){
-	Store<int>s1,s2;   //¶¨ÒåÁ½¸öStore<int>Àà¶ÔÏó£¬ÆäÖĞÊı¾İ³ÉÔ±itemÎªintÀàĞÍ 
-	s1.putElem(3);          //Ïò¶ÔÏós1ÖĞ´æÈëÊı¾İ£¨³õÊ¼»¯¶ÔÏós1£© 
-	s2.putElem(-7);         //Ïò¶ÔÏós2ÖĞ´æÈëÊı¾İ£¨³õÊ¼»¯¶ÔÏós2) 
-	cout<<s1.getElem()<<" "<<s2.getElem()<<endl;   //Êä³ö¶ÔÏós1ºÍs2µÄÊı¾İ³ÉÔ± 
+	Store<int>s1,s2;   //å®šä¹‰ä¸¤ä¸ªStore<int>ç±»å¯¹è±¡ï¼Œå…¶ä¸­æ•°æ®æˆå‘˜itemä¸ºintç±»å‹ 
+	s1.putElem(3);          //å‘å¯¹è±¡s1ä¸­å­˜å…¥æ•°æ®ï¼ˆåˆå§‹åŒ–å¯¹è±¡s1ï¼‰ 
+	s2.putElem(-7);         //å‘å¯¹è±¡s2ä¸­å­˜å…¥æ•°æ®ï¼ˆåˆå§‹åŒ–å¯¹è±¡s2) 
+	cout<<s1.getElem()<<" "<<s2.getElem()<<endl;   //è¾“å‡ºå¯¹è±¡s1å’Œs2çš„æ•°æ®æˆå‘˜ 
 	
-	Student g={1000,23};         //¶¨ÒåStudentÀàĞÍ½á¹¹Ìå±äÁ¿µÄÍ¬Ê±¸³Óè³õÖµ 
-	Store<Student>s3;    //¶¨ÒåStore<Student>Àà¶ÔÏós3£¬ÆäÖĞÊı¾İ³ÉÔ±itemÎªStudentÀàĞÍ 
-	s3.putElem(g);                 //Ïò¶ÔÏós3ÖĞ´æÈëÊı¾İ£¨³õÊ¼»¯¶ÔÏós3£© 
-	cout<<"The student id is "<<s3.getElem().id<<endl;   //Êä³ö¶ÔÏós3µÄÊı¾İ³ÉÔ± 
+	Student g={1000,23};         //å®šä¹‰Studentç±»å‹ç»“æ„ä½“å˜é‡çš„åŒæ—¶èµ‹äºˆåˆå€¼ 
+	Store<Student>s3;    //å®šä¹‰Store<Student>ç±»å¯¹è±¡s3ï¼Œå…¶ä¸­æ•°æ®æˆå‘˜itemä¸ºStudentç±»å‹ 
+	s3.putElem(g);                 //å‘å¯¹è±¡s3ä¸­å­˜å…¥æ•°æ®ï¼ˆåˆå§‹åŒ–å¯¹è±¡s3ï¼‰ 
+	cout<<"The student id is "<<s3.getElem().id<<endl;   //è¾“å‡ºå¯¹è±¡s3çš„æ•°æ®æˆå‘˜ 
 	
-	Store<double>d;     //¶¨ÒåStore<double>Àà¶ÔÏód£¬ÆäÖĞÊı¾İ³ÉÔ±itemÎªdoubleÀàĞÍ 
+	Store<double>d;     //å®šä¹‰Store<double>ç±»å¯¹è±¡dï¼Œå…¶ä¸­æ•°æ®æˆå‘˜itemä¸ºdoubleç±»å‹ 
 	cout<<"Retrieving object d...";
-	cout<<d.getElem()<<endl;           //Êä³ö¶ÔÏódµÄÊı¾İ³ÉÔ± 
-	//ÓÉÓÚdÎ´¾­³õÊ¼»¯£¬ÔÚÖ´ĞĞº¯Êıd.getElem()¹ı³ÌÖĞµ¼ÖÂ³ÌĞòÖÕÖ¹
+	cout<<d.getElem()<<endl;           //è¾“å‡ºå¯¹è±¡dçš„æ•°æ®æˆå‘˜ 
+	//ç”±äºdæœªç»åˆå§‹åŒ–ï¼Œåœ¨æ‰§è¡Œå‡½æ•°d.getElem()è¿‡ç¨‹ä¸­å¯¼è‡´ç¨‹åºç»ˆæ­¢
 	
 	return 0; 
 }

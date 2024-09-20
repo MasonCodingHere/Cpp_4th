@@ -1,20 +1,20 @@
-//Matrix.h ÎÄ¼şÒ»£¬MatrixÀà¶¨Òå
+//Matrix.h æ–‡ä»¶ä¸€ï¼ŒMatrixç±»å®šä¹‰
 
 #ifndef _MATRIX_H
 #define _MATRIX_H
 
-class Matrix{                            //»ùÀàMatrix¶¨Òå 
-	public:                              //Íâ²¿½Ó¿Ú 
-		Matrix(int size=2);              //¹¹Ôìº¯Êı 
-		~Matrix();                       //Îö¹¹º¯Êı 
-		void setMatrix(const double *values);  //¾ØÕó¸³³õÖµ 
-		void printMatrix() const;              //ÏÔÊ¾¾ØÕó 
-		int getSize() const {return size;}     //µÃµ½¾ØÕó´óĞ¡ 
+class Matrix{                            //åŸºç±»Matrixå®šä¹‰ 
+	public:                              //å¤–éƒ¨æ¥å£ 
+		Matrix(int size=2);              //æ„é€ å‡½æ•° 
+		~Matrix();                       //ææ„å‡½æ•° 
+		void setMatrix(const double *values);  //çŸ©é˜µèµ‹åˆå€¼ 
+		void printMatrix() const;              //æ˜¾ç¤ºçŸ©é˜µ 
+		int getSize() const {return size;}     //å¾—åˆ°çŸ©é˜µå¤§å° 
 		double &element(int i,int j){return elements[i*size+j];}
 		double element(int i,int j) const {return elements[i*size+j];}
-	private:                                   //Ë½ÓĞÊı¾İ³ÉÔ± 
-		int size;                              //¾ØÕó´óĞ¡ 
-		double *elements;                      //¾ØÕó´æ·ÅÊı×éÊ×µØÖ· 
+	private:                                   //ç§æœ‰æ•°æ®æˆå‘˜ 
+		int size;                              //çŸ©é˜µå¤§å° 
+		double *elements;                      //çŸ©é˜µå­˜æ”¾æ•°ç»„é¦–åœ°å€ 
 }; 
 
 #endif                                   //_MATRIX_H 

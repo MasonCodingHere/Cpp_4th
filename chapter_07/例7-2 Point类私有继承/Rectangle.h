@@ -4,10 +4,10 @@
 #define _RECTANGLE_H
 #include "Point.h"
 
-class Rectangle:private Point{                             //ÅÉÉúÀà¶¨Òå²¿·Ö 
-	public:                                                //ĞÂÔö¹«ÓĞº¯Êı³ÉÔ± 
+class Rectangle:private Point{                             //æ´¾ç”Ÿç±»å®šä¹‰éƒ¨åˆ† 
+	public:                                                //æ–°å¢å…¬æœ‰å‡½æ•°æˆå‘˜ 
 		void initRectangle(float x,float y,float w,float h){
-			initPoint(x,y);                                //µ÷ÓÃ»ùÀà¹«ÓĞº¯Êı³ÉÔ± 
+			initPoint(x,y);                                //è°ƒç”¨åŸºç±»å…¬æœ‰å‡½æ•°æˆå‘˜ 
 			this->w=w;
 			this->h=h; 
 		}
@@ -16,7 +16,7 @@ class Rectangle:private Point{                             //ÅÉÉúÀà¶¨Òå²¿·Ö
 		float getY() const {return Point::getY();}
 		float getH() const {return h;}
 		float getW() const {return w;}
-	private:                                                //ĞÂÔöË½ÓĞÊı¾İ³ÉÔ± 
+	private:                                                //æ–°å¢ç§æœ‰æ•°æ®æˆå‘˜ 
 		float w,h;
 }; 
 

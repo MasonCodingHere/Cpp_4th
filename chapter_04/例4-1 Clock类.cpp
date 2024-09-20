@@ -1,17 +1,17 @@
-//Àı4-1.Ê±ÖÓÀàµÄÍêÕû³ÌĞò 
+//ä¾‹4-1.æ—¶é’Ÿç±»çš„å®Œæ•´ç¨‹åº 
 
 #include<iostream> 
 using namespace std;
 
-class Clock{                                            //Ê±ÖÓÀàµÄ¶¨Òå 
-	public:                                             //Íâ²¿½Ó¿Ú£¬¹«ÓĞ³ÉÔ±º¯Êı 
+class Clock{                                            //æ—¶é’Ÿç±»çš„å®šä¹‰ 
+	public:                                             //å¤–éƒ¨æ¥å£ï¼Œå…¬æœ‰æˆå‘˜å‡½æ•° 
 		void setTime(int newH=0,int newM=0,int newS=0);
 		void showTime();
-	private:                                            //Ë½ÓĞÊı¾İ³ÉÔ± 
+	private:                                            //ç§æœ‰æ•°æ®æˆå‘˜ 
 		int hour,minute,second;
 };
 
-//Ê±ÖÓÀà³ÉÔ±º¯ÊıµÄ¾ßÌåÊµÏÖ 
+//æ—¶é’Ÿç±»æˆå‘˜å‡½æ•°çš„å…·ä½“å®ç° 
 void Clock::setTime(int newH,int newM,int newS){
 	hour=newH;
 	minute=newM;
@@ -22,15 +22,15 @@ inline void Clock::showTime(){
 	cout<<hour<<":"<<minute<<":"<<second<<endl;
 }
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 int main(){
-	Clock myClock;                                     //¶¨Òå¶ÔÏómyClock
+	Clock myClock;                                     //å®šä¹‰å¯¹è±¡myClock
 	cout<<"First time set and output:"<<endl;
-	myClock.setTime();                                 //ÉèÖÃÊ±¼äÎªÄ¬ÈÏÖµ 
-	myClock.showTime();                                //ÏÔÊ¾Ê±¼ä 
+	myClock.setTime();                                 //è®¾ç½®æ—¶é—´ä¸ºé»˜è®¤å€¼ 
+	myClock.showTime();                                //æ˜¾ç¤ºæ—¶é—´ 
 	cout<<"Second time set and output:"<<endl;
-	myClock.setTime(8,30,30);                          //ÉèÖÃÊ±¼äÎª8£º30£º30 
-	myClock.showTime();                                //ÏÔÊ¾Ê±¼ä 
+	myClock.setTime(8,30,30);                          //è®¾ç½®æ—¶é—´ä¸º8ï¼š30ï¼š30 
+	myClock.showTime();                                //æ˜¾ç¤ºæ—¶é—´ 
 	return 0; 
 } 
 

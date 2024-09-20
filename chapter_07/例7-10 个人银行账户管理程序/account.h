@@ -1,4 +1,4 @@
-//account.h ¸÷¸ö´¢ĞîÕË»§Àà¶¨ÒåÍ·ÎÄ¼ş
+//account.h å„ä¸ªå‚¨è“„è´¦æˆ·ç±»å®šä¹‰å¤´æ–‡ä»¶
 
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
@@ -7,68 +7,68 @@
 #include "accumulator.h"
 #include <string>
 
-class Account{                                 //ÕË»§Àà 
+class Account{                                 //è´¦æˆ·ç±» 
 	private:
-		std::string id;                        //ÕËºÅ 
-		double balance;                        //Óà¶î 
-		static double total;                   //ËùÓĞÕË»§µÄ×Ü½ğ¶î 
+		std::string id;                        //è´¦å· 
+		double balance;                        //ä½™é¢ 
+		static double total;                   //æ‰€æœ‰è´¦æˆ·çš„æ€»é‡‘é¢ 
 	protected:
-		//¹©ÅÉÉúÀàµ÷ÓÃµÄ¹¹Ôìº¯Êı£¬idÎªÕË»§
+		//ä¾›æ´¾ç”Ÿç±»è°ƒç”¨çš„æ„é€ å‡½æ•°ï¼Œidä¸ºè´¦æˆ·
 		Account(const Date &date,const std::string &id);
-		//¼ÇÂ¼Ò»±ÊÕË£¬dateÎªÈÕÆÚ£¬amountÎª½ğ¶î£¬descÎªËµÃ÷
+		//è®°å½•ä¸€ç¬”è´¦ï¼Œdateä¸ºæ—¥æœŸï¼Œamountä¸ºé‡‘é¢ï¼Œdescä¸ºè¯´æ˜
 		void record(const Date &date,double amount,const std::string &desc);
-		//±¨¸æ´íÎóĞÅÏ¢
+		//æŠ¥å‘Šé”™è¯¯ä¿¡æ¯
 		void error(const std::string &msg) const;
 	public:
 	    const std::string &getId() const {return id;}
 		double getBalance() const {return balance;}
 		static double getTotal() {return total;}
-		//ÏÔÊ¾ÕË»§ĞÅÏ¢
+		//æ˜¾ç¤ºè´¦æˆ·ä¿¡æ¯
 		void show() const; 
 }; 
 
-class SavingsAccount:public Account{          //´¢ĞîÕË»§Àà 
+class SavingsAccount:public Account{          //å‚¨è“„è´¦æˆ·ç±» 
 	private:
-		Accumulator acc;                      //¸¨Öú¼ÆËãÀûÏ¢µÄÀÛ¼ÓÆ÷ 
-		double rate;                          //´æ¿îµÄÄêÀûÂÊ 
+		Accumulator acc;                      //è¾…åŠ©è®¡ç®—åˆ©æ¯çš„ç´¯åŠ å™¨ 
+		double rate;                          //å­˜æ¬¾çš„å¹´åˆ©ç‡ 
 	public:
-		//¹¹Ôìº¯Êı
+		//æ„é€ å‡½æ•°
 		SavingsAccount(const Date &date,const std::string &id,double rate);
 		double getRate() const {return rate;}
-		//´æÈëÏÖ½ğ
+		//å­˜å…¥ç°é‡‘
 		void deposit(const Date &date,double amount,const std::string &desc);
-		//È¡³öÏÖ½ğ
+		//å–å‡ºç°é‡‘
 		void withdraw(const Date &date,double amount,const std::string &desc);
-		void settle(const Date &date);               //½áËãÀûÏ¢£¬Ã¿Äê1ÔÂ1ÈÕµ÷ÓÃÒ»´Î¸Ãº¯Êı 
+		void settle(const Date &date);               //ç»“ç®—åˆ©æ¯ï¼Œæ¯å¹´1æœˆ1æ—¥è°ƒç”¨ä¸€æ¬¡è¯¥å‡½æ•° 
 };
 
-class CreditAccount:public Account{                   //ĞÅÓÃÕË»§Àà 
+class CreditAccount:public Account{                   //ä¿¡ç”¨è´¦æˆ·ç±» 
 	private:
-		Accumulator acc;                              //¸¨Öú¼ÆËãÀûÏ¢µÄÀÛ¼ÓÆ÷ 
-		double credit;                                //ĞÅÓÃ¶î¶È 
-		double rate;                                  //Ç·¿îµÄÈÕÀûÂÊ 
-		double fee;                                   //ĞÅÓÃ¿¨Äê·Ñ 
-		double getDebt() const{                       //»ñµÃÇ·¿î¶î 
+		Accumulator acc;                              //è¾…åŠ©è®¡ç®—åˆ©æ¯çš„ç´¯åŠ å™¨ 
+		double credit;                                //ä¿¡ç”¨é¢åº¦ 
+		double rate;                                  //æ¬ æ¬¾çš„æ—¥åˆ©ç‡ 
+		double fee;                                   //ä¿¡ç”¨å¡å¹´è´¹ 
+		double getDebt() const{                       //è·å¾—æ¬ æ¬¾é¢ 
 		    double balance=getBalance();
 		    return (balance<0?balance:0);
 		}
 	public:
-		//¹¹Ôìº¯Êı
+		//æ„é€ å‡½æ•°
 		CreditAccount(const Date &date,const std::string &id,double credit,double rate,double fee);
 		double getCredit() const {return credit;}
 		double getRate() const {return rate;}
 		double getFee() const {return fee;}
-		double getAvailableCredit() const{               //»ñµÃ¿ÉÓÃĞÅÓÃ¶î¶È 
+		double getAvailableCredit() const{               //è·å¾—å¯ç”¨ä¿¡ç”¨é¢åº¦ 
 		    if(getBalance()<0)
 		        return credit+getBalance();
 		    else
 		        return credit;
 		} 
-		//´æÈëÏÖ½ğ
+		//å­˜å…¥ç°é‡‘
 		void deposit(const Date &date,double amount,const std::string &desc);
-		//È¡³öÏÖ½ğ
+		//å–å‡ºç°é‡‘
 		void withdraw(const Date &date,double amount,const std::string &desc);
-		void settle(const Date &date);                    //½áËãÀûÏ¢ºÍÄê·Ñ£¬Ã¿ÔÂ1ÈÕµ÷ÓÃÒ»´Î¸Ãº¯Êı 
+		void settle(const Date &date);                    //ç»“ç®—åˆ©æ¯å’Œå¹´è´¹ï¼Œæ¯æœˆ1æ—¥è°ƒç”¨ä¸€æ¬¡è¯¥å‡½æ•° 
 		void show() const; 
 }; 
 

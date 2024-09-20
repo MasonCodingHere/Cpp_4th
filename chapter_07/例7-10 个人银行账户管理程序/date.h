@@ -1,24 +1,24 @@
-//date.h ÈÕÆÚÀàÍ·ÎÄ¼ş
+//date.h æ—¥æœŸç±»å¤´æ–‡ä»¶
 
 #ifndef __DATE_H__
 #define __DATE_H__
-class Date{                                             //ÈÕÆÚÀà 
+class Date{                                             //æ—¥æœŸç±» 
 	private:
-		int year;                                       //Äê 
-		int month;                                      //ÔÂ 
-		int day;                                        //ÈÕ 
-		int totalDays;                                  //¸ÃÈÕÆÚÊÇ´Ó¹«ÔªÔªÄê1ÔÂ1ÈÕ¿ªÊ¼µÄµÚ¼¸Ìì 
+		int year;                                       //å¹´ 
+		int month;                                      //æœˆ 
+		int day;                                        //æ—¥ 
+		int totalDays;                                  //è¯¥æ—¥æœŸæ˜¯ä»å…¬å…ƒå…ƒå¹´1æœˆ1æ—¥å¼€å§‹çš„ç¬¬å‡ å¤© 
 	public:
-		Date(int year,int month,int day);               //ÓÃÄêÔÂÈÕ¹¹ÔìÈÕÆÚ 
+		Date(int year,int month,int day);               //ç”¨å¹´æœˆæ—¥æ„é€ æ—¥æœŸ 
 		int getYear() const {return year;}
 		int getMonth() const {return month;}
 		int getDay() const {return day;}
-		int getMaxDay() const;                          //»ñµÃµ±ÔÂÓĞ¶àÉÙÌì 
-		bool isLeapYear() const{                        //ÅĞ¶Ïµ±ÄêÊÇ·ñÎªÈòÄê 
+		int getMaxDay() const;                          //è·å¾—å½“æœˆæœ‰å¤šå°‘å¤© 
+		bool isLeapYear() const{                        //åˆ¤æ–­å½“å¹´æ˜¯å¦ä¸ºé—°å¹´ 
 		    return year%4==0&&year%100!=0||year%400==0;
 		} 
-		void show() const;                              //Êä³öµ±Ç°ÈÕÆÚ 
-		//¼ÆËãÁ½¸öÈÕÆÚÖ®¼ä²î¶àÉÙÌì
+		void show() const;                              //è¾“å‡ºå½“å‰æ—¥æœŸ 
+		//è®¡ç®—ä¸¤ä¸ªæ—¥æœŸä¹‹é—´å·®å¤šå°‘å¤©
 		int distance(const Date& date) const{
 		    return totalDays-date.totalDays;
 		} 

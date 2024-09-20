@@ -1,28 +1,28 @@
-//7_4.cpp ÅÉÉúÀà¹¹Ôìº¯Êı¾ÙÀı£¨¶à¼Ì³Ğ¡¢º¬ÓĞÄÚÇ¶¶ÔÏó£© 
+//7_4.cpp æ´¾ç”Ÿç±»æ„é€ å‡½æ•°ä¸¾ä¾‹ï¼ˆå¤šç»§æ‰¿ã€å«æœ‰å†…åµŒå¯¹è±¡ï¼‰ 
 
 #include<iostream>
 using namespace std;
 
-class Base1{                 //»ùÀàBase1£¬¹¹Ôìº¯ÊıÓĞ²ÎÊı 
+class Base1{                 //åŸºç±»Base1ï¼Œæ„é€ å‡½æ•°æœ‰å‚æ•° 
 	public:
 		Base1(int i){cout<<"Constructing Base1 "<<i<<endl;}
 }; 
 
-class Base2{                //»ùÀàBase2£¬¹¹Ôìº¯ÊıÓĞ²ÎÊı 
+class Base2{                //åŸºç±»Base2ï¼Œæ„é€ å‡½æ•°æœ‰å‚æ•° 
 	public:
 		Base2(int j){cout<<"Constructing Base2 "<<j<<endl;}
 };
 
-class Base3{                //»ùÀàBase3£¬¹¹Ôìº¯ÊıÎŞ²ÎÊı 
+class Base3{                //åŸºç±»Base3ï¼Œæ„é€ å‡½æ•°æ— å‚æ•° 
 	public:
 		Base3(){cout<<"Constructing Base3 *"<<endl;}
 };
 
 class Derived:public Base2,public Base1,public Base3{
-	//ÅÉÉúĞÂÀàDerived£¬×¢Òâ»ùÀàÃûµÄË³Ğò
-	public:                                                       //ÅÉÉúÀà¹«ÓĞ³ÉÔ± 
+	//æ´¾ç”Ÿæ–°ç±»Derivedï¼Œæ³¨æ„åŸºç±»åçš„é¡ºåº
+	public:                                                       //æ´¾ç”Ÿç±»å…¬æœ‰æˆå‘˜ 
 	    Derived(int a,int b,int c,int d):Base1(a),member2(d),member1(c),Base2(b){}
-		//×¢Òâ»ùÀàÃûµÄ¸öÊıÓëË³Ğò£¬×¢Òâ¶ÔÏó³ÉÔ±¶ÔÏóÃûµÄ¸öÊıÓëË³Ğò
+		//æ³¨æ„åŸºç±»åçš„ä¸ªæ•°ä¸é¡ºåºï¼Œæ³¨æ„å¯¹è±¡æˆå‘˜å¯¹è±¡åçš„ä¸ªæ•°ä¸é¡ºåº
 	private:
 	    Base1 member1;
 		Base2 member2;

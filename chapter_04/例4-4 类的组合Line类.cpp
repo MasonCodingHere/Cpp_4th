@@ -1,40 +1,40 @@
-//LineÀà¼ÆËãÏß¶Î³¤¶È 
+//Lineç±»è®¡ç®—çº¿æ®µé•¿åº¦ 
 
 #include<iostream>
 #include<cmath>
 using namespace std;
 
-class Point{                                                    //PointÀà¶¨Òå 
+class Point{                                                    //Pointç±»å®šä¹‰ 
 	public:
-		Point(int xx=0,int yy=0){                               //¹¹Ôìº¯Êı 
+		Point(int xx=0,int yy=0){                               //æ„é€ å‡½æ•° 
 			x=xx;
 			y=yy;
 		}
-		Point(Point &p);                                        //¸´ÖÆ¹¹Ôìº¯Êı 
+		Point(Point &p);                                        //å¤åˆ¶æ„é€ å‡½æ•° 
 		int getX(){return x;}
 		int getY(){return y;}
 	private:
 		int x,y;
 };
 
-Point::Point(Point &p){                                         //¸´ÖÆ¹¹Ôìº¯ÊıµÄÊµÏÖ 
+Point::Point(Point &p){                                         //å¤åˆ¶æ„é€ å‡½æ•°çš„å®ç° 
 	x=p.x;
 	y=p.y;
 	cout<<"Calling the copy constructor of Point"<<endl;
 }
 
-//ÀàµÄ×éºÏ
-class Line{                                                     //LineÀà¶¨Òå 
-	public:                                                     //Íâ²¿½Ó¿Ú 
-		Line(Point xp1,Point xp2);                              //¹¹Ôìº¯Êı 
-		Line(Line &l);                                          //¸´ÖÆ¹¹Ôìº¯Êı 
+//ç±»çš„ç»„åˆ
+class Line{                                                     //Lineç±»å®šä¹‰ 
+	public:                                                     //å¤–éƒ¨æ¥å£ 
+		Line(Point xp1,Point xp2);                              //æ„é€ å‡½æ•° 
+		Line(Line &l);                                          //å¤åˆ¶æ„é€ å‡½æ•° 
 		double getLen(){return len;}
-	private:                                                    //Ë½ÓĞÊı¾İ³ÉÔ± 
-		Point p1,p2;                                            //PointÀàµÄ¶ÔÏóp1£¬p2 
+	private:                                                    //ç§æœ‰æ•°æ®æˆå‘˜ 
+		Point p1,p2;                                            //Pointç±»çš„å¯¹è±¡p1ï¼Œp2 
 		double len;
 }; 
 
-//×éºÏÀàµÄ¹¹Ôìº¯Êı
+//ç»„åˆç±»çš„æ„é€ å‡½æ•°
 Line::Line(Point xp1,Point xp2):p1(xp1),p2(xp2){
 	cout<<"Calling constructor of Line"<<endl;
 	double x=static_cast<double>(p1.getX()-p2.getX());
@@ -42,17 +42,17 @@ Line::Line(Point xp1,Point xp2):p1(xp1),p2(xp2){
 	len=sqrt(x*x+y*y); 
 } 
 
-//×éºÏÀàµÄ¸´ÖÆ¹¹Ôìº¯Êı
+//ç»„åˆç±»çš„å¤åˆ¶æ„é€ å‡½æ•°
 Line::Line(Line &l):p1(l.p1),p2(l.p2){
 	cout<<"Calling the copy constructor of Line"<<endl;
 	len=l.len;
 } 
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 int main(){
-	Point myp1(1,1),myp2(4,5);                                    //½¨Á¢PointÀàµÄ¶ÔÏó 
-	Line line(myp1,myp2);                                         //½¨Á¢LineÀàµÄ¶ÔÏó 
-	Line line2(line);                                             //ÀûÓÃ¸´ÖÆ¹¹Ôìº¯Êı½¨Á¢Ò»¸öĞÂ¶ÔÏó 
+	Point myp1(1,1),myp2(4,5);                                    //å»ºç«‹Pointç±»çš„å¯¹è±¡ 
+	Line line(myp1,myp2);                                         //å»ºç«‹Lineç±»çš„å¯¹è±¡ 
+	Line line2(line);                                             //åˆ©ç”¨å¤åˆ¶æ„é€ å‡½æ•°å»ºç«‹ä¸€ä¸ªæ–°å¯¹è±¡ 
 	cout<<"The length of the line is:";
 	cout<<line.getLen()<<endl;
 	cout<<"The length of the line2 is:";

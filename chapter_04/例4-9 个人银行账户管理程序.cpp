@@ -1,36 +1,36 @@
-//Àı4-9.¸öÈËÒøĞĞÕË»§¹ÜÀí³ÌĞò 
+//ä¾‹4-9.ä¸ªäººé“¶è¡Œè´¦æˆ·ç®¡ç†ç¨‹åº 
 
 #include<iostream>
 #include<cmath>
 using namespace std;
 
-class SavingsAccount{                                          //´¢ĞîÕË»§Àà¶¨Òå 
+class SavingsAccount{                                          //å‚¨è“„è´¦æˆ·ç±»å®šä¹‰ 
 	private:
-		int id;                                                //ÕËºÅ 
-		double balance;                                        //Óà¶î 
-		double rate;                                           //´æ¿îµÄÄêÀûÂÊ 
-		int lastDate;                                          //ÉÏ´Î±ä¸üÓà¶îµÄÊ±ÆÚ 
-		double accumulation;                                   //Óà¶î°´ÈÕÀÛ¼ÓÖ®ºÍ 
-		//¼ÇÂ¼Ò»±ÊÕË£¬dateÎªÈÕÆÚ£¬amountÎª½ğ¶î£¬descÎªËµÃ÷
+		int id;                                                //è´¦å· 
+		double balance;                                        //ä½™é¢ 
+		double rate;                                           //å­˜æ¬¾çš„å¹´åˆ©ç‡ 
+		int lastDate;                                          //ä¸Šæ¬¡å˜æ›´ä½™é¢çš„æ—¶æœŸ 
+		double accumulation;                                   //ä½™é¢æŒ‰æ—¥ç´¯åŠ ä¹‹å’Œ 
+		//è®°å½•ä¸€ç¬”è´¦ï¼Œdateä¸ºæ—¥æœŸï¼Œamountä¸ºé‡‘é¢ï¼Œdescä¸ºè¯´æ˜
 		void record(int date,double amount);
-		//»ñµÃµ½Ö¸¶¨ÈÕÆÚÎªÖ¹µÄ´æ¿î½ğ¶î°´ÈÕÀÛ¼ÓÖµ 
+		//è·å¾—åˆ°æŒ‡å®šæ—¥æœŸä¸ºæ­¢çš„å­˜æ¬¾é‡‘é¢æŒ‰æ—¥ç´¯åŠ å€¼ 
 		double accumulate(int date) const{
 		return accumulation+balance*(date-lastDate);}
 	public:
-	    //¹¹Ôìº¯Êı
+	    //æ„é€ å‡½æ•°
 		SavingsAccount(int date,int id,double rate);
 		int getId(){return id;}
 		double getBalance(){return balance;}
 		double getRate(){return rate;}
-		void deposit(int date,double amount);                     //´æÈëÏÖ½ğ 
-		void withdraw(int date,double amount);                    //È¡³öÏÖ½ğ 
-		//½áËãÀûÏ¢£¬Ã¿Äê1ÔÂ1ÈÕµ÷ÓÃÒ»´Î¸Ãº¯Êı
+		void deposit(int date,double amount);                     //å­˜å…¥ç°é‡‘ 
+		void withdraw(int date,double amount);                    //å–å‡ºç°é‡‘ 
+		//ç»“ç®—åˆ©æ¯ï¼Œæ¯å¹´1æœˆ1æ—¥è°ƒç”¨ä¸€æ¬¡è¯¥å‡½æ•°
 		void settle(int date);
-		//ÏÔÊ¾ÕË»§ĞÅÏ¢
+		//æ˜¾ç¤ºè´¦æˆ·ä¿¡æ¯
 		void show(); 
 };
 
-//SavingsAccountÀàÏà¹Ø³ÉÔ±º¯ÊıµÄÊµÏÖ
+//SavingsAccountç±»ç›¸å…³æˆå‘˜å‡½æ•°çš„å®ç°
 SavingsAccount::SavingsAccount(int date,int id,double rate):id(id),balance(0),rate(rate),lastDate(date),accumulation(0){
 	cout<<date<<"\t#"<<id<<" is created"<<endl; 
 } 
@@ -38,7 +38,7 @@ SavingsAccount::SavingsAccount(int date,int id,double rate):id(id),balance(0),ra
 void SavingsAccount::record(int date,double amount){
 	accumulation=accumulate(date);
 	lastDate=date;
-	amount=floor(amount*100+0.5)/100;                             //±£ÁôĞ¡ÊıµãºóÁ½Î» 
+	amount=floor(amount*100+0.5)/100;                             //ä¿ç•™å°æ•°ç‚¹åä¸¤ä½ 
 	balance+=amount;
 	cout<<date<<"\t#"<<id<<"\t"<<amount<<"\t"<<balance<<endl;
 }
@@ -55,7 +55,7 @@ void SavingsAccount::withdraw(int date,double amount){
 }
 
 void SavingsAccount::settle(int date){
-	double interest=accumulate(date)*rate/365;                    //¼ÆËãÄêÏ¢ 
+	double interest=accumulate(date)*rate/365;                    //è®¡ç®—å¹´æ¯ 
 	if(interest!=0)
 	    record(date,interest);
 	accumulation=0;
@@ -66,18 +66,18 @@ void SavingsAccount::show(){
 }
 
 int main(){
-	//½¨Á¢¼¸¸öÕË»§
+	//å»ºç«‹å‡ ä¸ªè´¦æˆ·
 	SavingsAccount sa0(1,21325302,0.015);
 	SavingsAccount sa1(1,58320212,0.015);
-	//¼¸±ÊÕËÄ¿
+	//å‡ ç¬”è´¦ç›®
 	sa0.deposit(5,5000);
 	sa1.deposit(25,10000);
 	sa0.deposit(45,5500);
 	sa1.withdraw(60,4000);
-	//¿ª»§ºóµÚ90Ììµ½ÁËÒøĞĞµÄ¼ÆÏ¢ÈÕ£¬½áËãËùÓĞÕË»§µÄÄêÏ¢
+	//å¼€æˆ·åç¬¬90å¤©åˆ°äº†é“¶è¡Œçš„è®¡æ¯æ—¥ï¼Œç»“ç®—æ‰€æœ‰è´¦æˆ·çš„å¹´æ¯
 	sa0.settle(90);
 	sa1.settle(90);
-	//Êä³ö¸÷¸öÕË»§µÄĞÅÏ¢
+	//è¾“å‡ºå„ä¸ªè´¦æˆ·çš„ä¿¡æ¯
 	sa0.show();    cout<<endl;
 	sa1.show();    cout<<endl;
 	return 0; 

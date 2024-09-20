@@ -1,32 +1,32 @@
-//7_5.cpp ÅÉÉúÀàÎö¹¹º¯Êı¾ÙÀı£¨¶à¼Ì³Ğ¡¢º¬ÓĞÇ¶Èë¶ÔÏó£©
+//7_5.cpp æ´¾ç”Ÿç±»ææ„å‡½æ•°ä¸¾ä¾‹ï¼ˆå¤šç»§æ‰¿ã€å«æœ‰åµŒå…¥å¯¹è±¡ï¼‰
 
 #include<iostream>
 using namespace std;
 
-class Base1{                                //»ùÀàBase1£¬¹¹Ôìº¯ÊıÓĞ²ÎÊı 
+class Base1{                                //åŸºç±»Base1ï¼Œæ„é€ å‡½æ•°æœ‰å‚æ•° 
 	public:
 		Base1(int i){cout<<"Constructing Base1 "<<i<<endl;}
 		~Base1(){cout<<"Destructing Base1"<<endl;}
 }; 
 
-class Base2{                               //»ùÀàBase2£¬¹¹Ôìº¯ÊıÓĞ²ÎÊı
+class Base2{                               //åŸºç±»Base2ï¼Œæ„é€ å‡½æ•°æœ‰å‚æ•°
 	public:
 		Base2(int j){cout<<"Constructing Base2 "<<j<<endl;}
 		~Base2(){cout<<"Destructing Base2"<<endl;}
 };
 
-class Base3{                               //»ùÀàBase3£¬¹¹Ôìº¯ÊıÎŞ²ÎÊı
+class Base3{                               //åŸºç±»Base3ï¼Œæ„é€ å‡½æ•°æ— å‚æ•°
 	public:
 		Base3(){cout<<"Constructing Base3 *"<<endl;}
 		~Base3(){cout<<"Destructing Base3"<<endl;}
 };
 
 class Derived:public Base2,public Base1,public Base3{
-	//ÅÉÉúĞÂÀàDerived£¬×¢Òâ»ùÀàÃûµÄË³Ğò
-	public:                                //ÅÉÉúÀàµÄ¹«ÓĞ³ÉÔ± 
+	//æ´¾ç”Ÿæ–°ç±»Derivedï¼Œæ³¨æ„åŸºç±»åçš„é¡ºåº
+	public:                                //æ´¾ç”Ÿç±»çš„å…¬æœ‰æˆå‘˜ 
 	    Derived(int a,int b,int c,int d):Base1(a),member2(d),member1(c),Base2(b){}
-		//×¢Òâ»ùÀàÃûµÄ¸öÊıÓëË³Ğò£¬×¢Òâ³ÉÔ±¶ÔÏóÃûµÄ¸öÊıÓëË³Ğò
-	private:                               //ÅÉÉúÀàµÄË½ÓĞ³ÉÔ±¶ÔÏó 
+		//æ³¨æ„åŸºç±»åçš„ä¸ªæ•°ä¸é¡ºåºï¼Œæ³¨æ„æˆå‘˜å¯¹è±¡åçš„ä¸ªæ•°ä¸é¡ºåº
+	private:                               //æ´¾ç”Ÿç±»çš„ç§æœ‰æˆå‘˜å¯¹è±¡ 
 	    Base1 member1;
 		Base2 member2;
 		Base3 member3; 
